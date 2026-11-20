@@ -32,18 +32,46 @@ void count_vowels() {
     (void)vowels;
 }
 
+void least_multiple() {
+    int a = 6, b = 8;
+    int x = a, y = b;
+    while (y != 0) {
+        int t = x % y;
+        x = y;
+        y = t;
+    }
+    int lcm = a / x * b;
+    (void)lcm;
+}
+
+void sort_small() {
+    int values[4] = {9, 3, 7, 1};
+    for (int i = 0; i < 4; ++i) {
+        for (int j = i + 1; j < 4; ++j) {
+            if (values[j] < values[i]) {
+                int t = values[i];
+                values[i] = values[j];
+                values[j] = t;
+            }
+        }
+    }
+    (void)values[0];
+}
+
 extern "C" int eager_compass();
-extern "C" void cedar_orbit();
-extern "C" void hidden_spruce();
-extern "C" void misty_hollow();
+extern "C" void cedar_fjord();
+extern "C" void verdant_fjord();
+extern "C" void brisk_spruce();
 
 int main() {
     count_spaces();
     min_of_two();
     small_factorial();
     count_vowels();
-    cedar_orbit();
-    hidden_spruce();
-    misty_hollow();
+    least_multiple();
+    sort_small();
+    cedar_fjord();
+    verdant_fjord();
+    brisk_spruce();
     return eager_compass();
 }
